@@ -36,8 +36,7 @@
 								<li><a href="#myprinciples">Principles</a></li>
 								<li><a href="#mywork">My Work</a></li>
 								<li><a href="#contact">Contact me</a></li>
-								<!--<button id="toggle-lang">日本語 / English</button>-->
-								<!--<li><a href="#elements">Elements</a></li>-->
+								<li><button id="toggle-lang" onclick="switchLanguage('en')">English</button></li>
 							</ul>
 						</nav>
 					</header>
@@ -79,7 +78,8 @@
 								<p>I tried using q-learning and changed the window size in an AIMD(Additive Increase Multiplicative Decrease) style. It adjusts the flow of data packets (cars) on a network (highway) intelligently. It learns from past experiences (traffic patterns) to decide how to change the window size, which is the rate at which packets are sent. When congestion is low, it increases the window size gradually (like slowly letting more cars on the highway). When congestion is detected, it decreases the window size significantly (like reducing the number of cars entering). This adaptive approach ensures efficient and smooth data flow, avoiding congestion. Here below are some of the academic conferences that I presented my work.</p>
 								<p>2023/09-Presentation : <a href="https://www.ieice.org/publications/conferences/summary.php?id=CONF0000140489&expandable=1&ConfCd=2023S&session_num=B-16&lecture_number=B-16-24&year=2023&conf_type=S">The Institute of Electronics, Information and Communication Engineers(IEICE), Society 2023</a>, "異種の効用関数に対応した強化学習型ウィンドウフロー制御方式に関する一検討", Yuta Takesada, Han Nay Aung, Ryo Nakamura, Hiroyuki Ohsaki</p>
 								<p>2023/11-Poster Presentation : <a href="https://www.itrc.net/meet/54-program/">Internet Technology Research Consortium(ITRC), ITRC meet54</a>, "異種の効用関数に対応した強化学習型ウィンドウフロー制御方式に関する検討", Yuta Takesada, Han Nay Aung, Ryo Nakamura, Hiroyuki Ohsaki</p>
-								<p>2024/01-Poster Presentation : <a href="https://ken.ieice.org/ken/paper/20240125Xcap/">Internet Architecture Research Society(IA), センサー ネットワーク, IoT, M2M, 一般, 及び IA2023 - Workshop on Internet Architecture and Applications 2023</a>"A Study on Reinforcement Learning-Based Window Flow Control with Heterogeneous Utility Function", Yuta Takesada, Han Nay Aung, Ryo Nakamura, Hiroyuki Ohsaki<br>→ Received "Award for Student Studies by Technical Committee of Internet Architecture"</p>
+								<p>2024/01-Poster Presentation : <a href="https://ken.ieice.org/ken/paper/20240125Xcap/">Internet Architecture Research Society(IA), センサー ネットワーク, IoT, M2M, 一般, 及び IA2023 - Workshop on Internet Architecture and Applications 2023</a>"A Study on Reinforcement Learning-Based Window Flow Control with Heterogeneous Utility Function", Yuta Takesada, Han Nay Aung, Ryo Nakamura, Hiroyuki Ohsaki<br>→ Received "Award for Student Studies by Technical 
+Committee of Internet Architecture"</p>
 							</article>
 
 						<!-- Contact -->
@@ -373,6 +373,16 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		 <script>
+		   function switchLanguage(lang) {
+		       if (lang === 'ja') {
+			   window.location.href = 'index.html'; // 日本語版へのリンク
+		       } else if (lang === 'en') {
+			   window.location.href = 'index-en.html'; // 英語版へのリンク
+		       }
+		   }
+		 </script>
 
 	</body>
 </html>
