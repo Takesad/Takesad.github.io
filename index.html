@@ -390,6 +390,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			  logs.forEach(log => {
 			      const logItem = document.createElement('li');
 			      logItem.classList.add('log-entry');  // ← li にクラスを追加
+			      const onlyDate = log.date.split(' ')[0];
 			      logItem.innerHTML = `
                                   <span style="color: #ffffff;">${log.date}</span>
                                   <a href="${log.link}" target="_blank" style="margin-left: 10px;">
