@@ -369,6 +369,26 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<!-- BG -->
 			<div id="bg"></div>
 
+		<!-- Scripts の直前に挿入するJavaScript -->
+		<script>
+		  fetch('./logs.json')
+                      .then(response => response.json())
+                      .then(logs => {
+			  const logList = document.getElementById('log-list');
+			  logs.forEach(log => {
+			      const logItem = document.createElement('li');
+			      logItem.innerHTML = `
+                                  <span style="color: #888;">${log.date}</span>
+                                  <a href="${log.link}" target="_blank" style="margin-left: 10px;">
+                                      【${log.platform}】${log.title}
+                                  </a>
+                              `;
+			      logList.appendChild(logItem);
+			  });
+		      })
+                      .catch(error => console.error('Logging Error:', error));
+		</script>			
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
