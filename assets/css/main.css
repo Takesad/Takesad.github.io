@@ -1177,6 +1177,20 @@ input, select, textarea {
 			background-color: #000000;
 		}
 
+		/* 初期状態で背景を強めにぼかす */
+		body.is-preload #bg:after {
+		    filter: blur(1rem);
+		    transform: scale(1.05); /* 少し拡大して奥行きを出す */
+		    transition: filter 1s ease, transform 1s ease;
+		}
+
+		/* ロード後（is-preload クラスが外れた後）にクリアにする */
+		body:not(.is-preload) #bg:after {
+		    filter: blur(0);
+		    transform: scale(1); /* 元の大きさに戻す */
+		    transition: filter 1s ease, transform 1s ease;
+		}
+
 /* Wrapper */
 
 	#wrapper {
