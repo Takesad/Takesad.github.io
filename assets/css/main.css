@@ -1728,6 +1728,7 @@ input, select, textarea {
   display: flex;              /* 中央寄せのためにflexを使う */
   justify-content: center;    /* 横方向の中央寄せ */
   align-items: center;        /* 縦方向の中央寄せ */
+  text-align: center;          /* 念のため中央寄せ */
 }
 
 /* バスケットボールアイコンのサイズ調整 */
@@ -1736,8 +1737,6 @@ input, select, textarea {
   line-height: 1 !important;
   display: inline-block !important;
 }
-
-
 
 
 
