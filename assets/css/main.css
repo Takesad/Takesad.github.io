@@ -1750,3 +1750,8 @@ input, select, textarea {
   line-height: 1 !important;
   display: inline-block !important;
 }
+
+/* 更新ログの日付を白にする */
+#update-log li {
+  color: #ffffff;
+}
