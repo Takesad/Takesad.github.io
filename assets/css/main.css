@@ -1721,24 +1721,24 @@ input, select, textarea {
     opacity: 0.25;
 }		
 		
+/* ロゴ枠のサイズを調整 */
+.logo {
+  width: 8rem;                /* 枠の幅を大きくする（好みに合わせて調整） */
+  height: 8rem;               /* 枠の高さも合わせる */
+  display: flex;              /* 中央寄せのためにflexを使う */
+  justify-content: center;    /* 横方向の中央寄せ */
+  align-items: center;        /* 縦方向の中央寄せ */
+}
+
 /* バスケットボールアイコンのサイズ調整 */
 .logo i.fa-basketball {
-  font-size: 5rem !important;       /* 大きさを調整。必要に応じて 4rem→5remなど */
-  line-height: 1 !important;        /* アイコンの上下位置調整 */
-  display: inline-block !important; /* 安定表示のため */
+  font-size: 6rem !important; /* 枠サイズに合わせて調整。7remや8remも試せます */
+  line-height: 1 !important;
+  display: inline-block !important;
 }
 
-.logo {
-  width: 10rem;
-  height: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.logo i.fa-basketball {
-  font-size: 9rem !important;
-}
+
 
 
 
