@@ -383,7 +383,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- Scripts の直前に挿入するJavaScript -->
 		<script>
-		  fetch('./logs.json')
+		  fetch('./logs.json?ver=' + Date.now())
                       .then(response => response.json())
                       .then(logs => {
 			  const logList = document.getElementById('log-list');
