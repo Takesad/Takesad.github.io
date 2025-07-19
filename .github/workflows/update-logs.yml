@@ -1,0 +1,33 @@
+name: Update Logs
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 毎日0時（日本時間は午前9時）
+  workflow_dispatch:
+
+jobs:
+  update_logs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install feedparser
+
+      - name: Run update_logs.py
+        run: python update_logs.py
+
+      - name: Commit and Push changes
+        run: |
+          git config user.name 'GitHub Actions'
+          git config user.email 'actions@github.com'
+          git add logs.json
+          git commit -m "Update logs.json (auto)" || exit 0
+          git push
