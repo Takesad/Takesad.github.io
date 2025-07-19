@@ -14,30 +14,6 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 		
 	</head>
-
-	<script>
-	  async function loadUpdates() {
-	      try {
-		  const res = await fetch('updates.json'); // 同じリポジトリの直下を参照
-		  const updates = await res.json();
-
-		  const listEl = document.getElementById('updates-list');
-		  listEl.innerHTML = ''; // 初期化
-
-		  updates.forEach(u => {
-		      const li = document.createElement('li');
-		      li.textContent = `${u.date} ${u.service}が更新されました`;
-		      listEl.appendChild(li);
-		  });
-	      } catch(e) {
-		  console.error(e);
-		  document.getElementById('updates-list').innerHTML = '<li>取得に失敗しました</li>';
-	      }
-	  }
-
-	  document.addEventListener('DOMContentLoaded', loadUpdates);
-        </script>
-	
 	<body class="is-preload">
 
 	  <section id="updates" style="margin:20px; padding:10px; border:1px solid #ccc;">
@@ -425,5 +401,29 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		 </script>
 
 	</body>
+
+		<script>
+	  async function loadUpdates() {
+	      try {
+		  const res = await fetch('updates.json'); // 同じリポジトリの直下を参照
+		  const updates = await res.json();
+
+		  const listEl = document.getElementById('updates-list');
+		  listEl.innerHTML = ''; // 初期化
+
+		  updates.forEach(u => {
+		      const li = document.createElement('li');
+		      li.textContent = `${u.date} ${u.service}が更新されました`;
+		      listEl.appendChild(li);
+		  });
+	      } catch(e) {
+		  console.error(e);
+		  document.getElementById('updates-list').innerHTML = '<li>取得に失敗しました</li>';
+	      }
+	  }
+
+	  document.addEventListener('DOMContentLoaded', loadUpdates);
+        </script>
+
 </html>
 
