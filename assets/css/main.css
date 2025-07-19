@@ -1732,7 +1732,7 @@ input, select, textarea {
 
 /* バスケットボールアイコンのサイズ調整 */
 .logo i.fa-basketball {
-  font-size: 6rem !important; /* 枠サイズに合わせて調整。7remや8remも試せます */
+  font-size: 3.5rem !important; /* 枠サイズに合わせて調整。7remや8remも試せます */
   line-height: 1 !important;
   display: inline-block !important;
 }
