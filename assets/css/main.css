@@ -1751,9 +1751,27 @@ input, select, textarea {
   display: inline-block !important;
 }
 
-/* 更新ログリストを白に強制 */
-#log-list,
-#log-list li,
-#log-list li * {
-  color: #ffffff !important;
+/* 更新ログ全体をフレックスで整列 */
+#log-list li.log-entry {
+  display: flex;
+  align-items: flex-start; /* 縦揃え */
+  margin-bottom: 0.5em;    /* 各行の間隔 */
 }
+
+/* 日付を固定幅にして右寄せ */
+#log-list li.log-entry .log-date {
+  display: inline-block;
+  width: 8em;              /* 日付幅を調整 */
+  color: #ffffff;
+  text-align: right;
+  margin-right: 1em;       /* 日付とリンクの間隔 */
+}
+
+/* リンク部分 */
+#log-list li.log-entry .log-link {
+  flex: 1;                 /* 残り幅いっぱい */
+  color: #ffffff;
+  text-decoration: none;
+  word-break: break-word;  /* 長いタイトルを折り返し */
+}
+
