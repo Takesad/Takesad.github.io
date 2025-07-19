@@ -1723,9 +1723,9 @@ input, select, textarea {
 		
 /* バスケットボールアイコンのサイズ調整 */
 .logo i.fa-basketball-ball {
-  font-size: 5rem;       /* 大きさを調整。必要に応じて 4rem→5remなど */
-  line-height: 1;        /* アイコンの上下位置調整 */
-  display: inline-block; /* 安定表示のため */
+  font-size: 5rem !important;       /* 大きさを調整。必要に応じて 4rem→5remなど */
+  line-height: 1 !important;        /* アイコンの上下位置調整 */
+  display: inline-block !important; /* 安定表示のため */
 }
 
 
