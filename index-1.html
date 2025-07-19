@@ -38,6 +38,12 @@
 								<li><a href="#" class="language-switch" onclick="switchLanguage('en')">English</a></li>
 							</ul>
 						</nav>
+		
+						<!-- 更新ログ表示 (ここに追加) -->
+						<section id="update-log">
+						  <h2 class="major">更新状況</h2>
+						  <ul id="log-list"></ul>
+						</section>				
 					</header>
 
 				<!-- Main -->
@@ -386,7 +392,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			      logList.appendChild(logItem);
 			  });
 		      })
-                      .catch(error => console.error('Logging Error:', error));
+                      .catch(error => console.error('ログ取得エラー:', error));
 		</script>			
 
 		<!-- Scripts -->
