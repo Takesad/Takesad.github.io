@@ -1722,13 +1722,12 @@ input, select, textarea {
 }		
 		
 /* ロゴ枠のサイズを調整 */
-.logo {
-  width: 8rem;                /* 枠の幅を大きくする（好みに合わせて調整） */
-  height: 8rem;               /* 枠の高さも合わせる */
-  display: flex;              /* 中央寄せのためにflexを使う */
-  justify-content: center;    /* 横方向の中央寄せ */
-  align-items: center;        /* 縦方向の中央寄せ */
-  text-align: center;          /* 念のため中央寄せ */
+#header .logo {
+  display: flex !important;
+  justify-content: center !important;  /* 横方向の中央 */
+  align-items: center !important;      /* 縦方向の中央 */
+  line-height: normal !important;      /* 高さ基準をリセット */
+  padding: 0 !important;               /* 余白リセット（必要なら） */
 }
 
 /* バスケットボールアイコンのサイズ調整 */
@@ -1737,7 +1736,3 @@ input, select, textarea {
   line-height: 1 !important;
   display: inline-block !important;
 }
-
-
-
-
