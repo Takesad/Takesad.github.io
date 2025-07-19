@@ -1721,17 +1721,11 @@ input, select, textarea {
     opacity: 0.25;
 }		
 		
-/* /\* バスケットボールアイコンのサイズ調整 *\/ */
-/* .logo i.fa-basketball-ball { */
-/*   font-size: 4rem;       /\* 大きさを調整。必要に応じて 4rem→5remなど *\/ */
-/*   line-height: 1;        /\* アイコンの上下位置調整 *\/ */
-/*   display: inline-block; /\* 安定表示のため *\/ */
-/* } */
-
-.logo {
-  width: 12rem;
-  height: 12rem;
-}
+/* バスケットボールアイコンのサイズ調整 */
 .logo i.fa-basketball-ball {
-  font-size: 10rem;
+  font-size: 5rem;       /* 大きさを調整。必要に応じて 4rem→5remなど */
+  line-height: 1;        /* アイコンの上下位置調整 */
+  display: inline-block; /* 安定表示のため */
 }
+
+
