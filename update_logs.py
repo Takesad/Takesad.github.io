@@ -9,19 +9,23 @@ def parse_rss(feed_url, platform_name):
     feed = feedparser.parse(feed_url)
     logs = []
     for entry in feed.entries[:5]:
-        # published_parsed か updated_parsed を取得
-        if hasattr(entry, "published_parsed") and entry.published_parsed:
-            date_struct = entry.published_parsed
+        # まず published 文字列を優先的に使う
+        if hasattr(entry, "published"):
+            try:
+                # published 例: 'Sat, 20 Jul 2025 12:34:56 +0000'
+                dt = datetime(*entry.published_parsed[:6])
+            except Exception:
+                # 文字列をパースできなかった場合は現在時刻
+                dt = datetime.utcnow()
+        elif hasattr(entry, "published_parsed") and entry.published_parsed:
+            dt = datetime(*entry.published_parsed[:6])
         elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
-            date_struct = entry.updated_parsed
+            dt = datetime(*entry.updated_parsed[:6])
         else:
-            date_struct = datetime.utcnow().timetuple()
-
-        # datetime オブジェクトに変換（年月日 時:分:秒 まで）
-        dt = datetime(*date_struct[:6])
+            dt = datetime.utcnow()
 
         logs.append({
-            "date": dt.strftime("%Y-%m-%d %H:%M:%S"),  # ← 時間まで入れる
+            "date": dt.strftime("%Y-%m-%d %H:%M:%S"),
             "title": entry.title,
             "link": entry.link,
             "platform": platform_name
