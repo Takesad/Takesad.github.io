@@ -1751,7 +1751,9 @@ input, select, textarea {
   display: inline-block !important;
 }
 
-/* 更新ログの日付を白にする */
-#update-log li {
-  color: #ffffff;
+/* 更新ログリストを白に強制 */
+#log-list,
+#log-list li,
+#log-list li * {
+  color: #ffffff !important;
 }
