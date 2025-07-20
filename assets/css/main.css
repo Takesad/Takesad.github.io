@@ -1775,3 +1775,31 @@ input, select, textarea {
   word-break: break-word;  /* 長いタイトルを折り返し */
 }
 
+/* ツールチップベース */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 120%; /* アイコンの右横に表示 */
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
